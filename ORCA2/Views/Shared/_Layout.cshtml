@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ORCA Consulting</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <style>
+        .navbar-inverse {
+            background-color: lightgray;
+            position: relative; 
+        }
+        .navbar-default {
+            background-color: green;
+        }
+    </style>
+    <!---<nav class="nav navbar-default navbar-fixed-top" style="background-color: black;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Home/Index" style="color: white; font-size: large;">Welcome To The Online Report And Consulting Application</a>
+            </div>
+        </div>
+    </nav>-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Home/Index" style="color:white; font-size: large; font-weight: bold;">Welcome To The Online Reporting and Consulting Application</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://mymu.marshall.edu/" style="color: white;"><span class="glyphicon glyphicon-user"></span>MyMU</a></li>
+                <li><a href="https://www.marshall.edu/muonline/" style="color: white;"><span class="glyphicon glyphicon-user"></span>MuOnline</a></li>
+                <li><a href="http://www.marshall.edu/phonebook.php" style="color: white;"><span class="glyphicon glyphicon-book"></span>Directory</a></li>
+            </ul>
+        </div>
+        <style>
+            .navbar-right li a span {
+                color: white;
+                font-size: medium;
+            }
+        </style>
+    </nav>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <img src="http://www.marshall.edu/home/img/main/mu_logo_blk.png" />
+            <style>
+                img {
+                    width: 250px;
+                    height: 65px;
+                    margin-right: 3em;
+                }
+            </style>
+            <div class="navbar-header">
+                <!----<a class="navbar-brand" href="Home/Index">ORCA Consulting</a>-->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="Home/Index" style="color: black;">Home</a></li>
+                    <li><a href="Home/About" style="color: black;">About ORCA</a></li>
+                    <li><a href="Home/Contact" style="color: black;">Expert Contact Information</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="UserLists/Index" style="color: black;">Users
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Send Message To Expert", "Create", "Messages")</li>
+                            <li>@Html.ActionLink("List Of All Messages", "Index", "Messages") </li>
+                            <li>@Html.ActionLink("List Of All Validated Experts", "Index", "Experts")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="Experts/Index" style="color: black;">Experts
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Replies/Create">Reply To An Expert</a></li>
+                            <li><a href="Experts/Index">List Of All Validated Experts</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <style>
+                    ul li a {
+                        font-size: medium;
+                        font-weight: bold;
+                    }
+                </style>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <span class="glyphicon glyphicon-search"></span>
+                        <input type="text" class="form-control" placeholder="Search By Expertise" href="Expertise/Index"style="width: 200px;"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+               <p>&copy; @DateTime.Now.Year - ORCA Consulting</p>
+            </footer>
+        </div> 
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

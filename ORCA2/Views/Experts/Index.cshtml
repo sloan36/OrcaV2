@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ORCA2.Models.Expert>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpertiseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Validated)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpertiseID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Validated)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ExpertID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ExpertID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ExpertID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,34 @@
+﻿@model ORCA2.Models.Expert
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Expert</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpertiseID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpertiseID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Validated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Validated)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ExpertID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

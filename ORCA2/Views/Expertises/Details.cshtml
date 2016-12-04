@@ -1,0 +1,45 @@
+﻿@model ORCA2.Models.Expertise
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Expertise</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Field)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Field)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (User.Identity.Name.Equals("admin@orca.com"))
+    {
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ExpertiseID })} |
+    @Html.ActionLink("Back to List", "Index")
+</p>
